@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/harry-potter-universe/static/css/main.399e22aa.css",
-    "main.js": "/harry-potter-universe/static/js/main.d8fef0d7.js",
+    "main.css": "/harry-potter-universe/static/css/main.8529064d.css",
+    "main.js": "/harry-potter-universe/static/js/main.a6bf57c9.js",
     "static/js/453.3b111809.chunk.js": "/harry-potter-universe/static/js/453.3b111809.chunk.js",
     "index.html": "/harry-potter-universe/index.html",
-    "main.399e22aa.css.map": "/harry-potter-universe/static/css/main.399e22aa.css.map",
-    "main.d8fef0d7.js.map": "/harry-potter-universe/static/js/main.d8fef0d7.js.map",
+    "main.8529064d.css.map": "/harry-potter-universe/static/css/main.8529064d.css.map",
+    "main.a6bf57c9.js.map": "/harry-potter-universe/static/js/main.a6bf57c9.js.map",
     "453.3b111809.chunk.js.map": "/harry-potter-universe/static/js/453.3b111809.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.399e22aa.css",
-    "static/js/main.d8fef0d7.js"
+    "static/css/main.8529064d.css",
+    "static/js/main.a6bf57c9.js"
   ]
 }
