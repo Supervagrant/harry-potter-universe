@@ -34,7 +34,7 @@ function App() {
         </div>
 
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/harry-potter-universe/" element={<Main />} />
           <Route path="/characters" element={<Characters />}></Route>
           <Route path="/students" element={<Students />}></Route>
           <Route path="/staff" element={<Staff />}></Route>
