@@ -14,3 +14,29 @@ body {
 .inner {
   padding: 15px;
 }
+
+.main-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.main-nav p {
+  margin-bottom: 15px;
+}
+
+.main-nav li {
+  position: relative;
+  padding-left: 40px;
+  padding-bottom: 10px;
+}
+
+.main-nav li:before {
+  content: '🎃';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.main-nav a {
+  color: inherit;
+}

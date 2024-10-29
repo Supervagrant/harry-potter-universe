@@ -13,7 +13,7 @@ function App() {
         <div className="App">
           <h1>Harry Potter Universe</h1>
           <div className='inner'>
-          <nav>
+          <nav className='main-nav'>
             <p>What do you want to see?</p>
             <ul>
               <li>
@@ -34,11 +34,11 @@ function App() {
         </div>
 
         <Routes>
+          <Route path="/" element={<Main />} />
           <Route path="/characters" element={<Characters />}></Route>
           <Route path="/students" element={<Students />}></Route>
           <Route path="/staff" element={<Staff />}></Route>
-          <Route path="/spells" element={<Spells />}></Route>
-          <Route path="/" element={<Main />} />
+          <Route path="/spells" element={<Spells />}></Route> 
           <Route path="*" element={<div>Page not found</div>}></Route>
         </Routes>
       </Router>
