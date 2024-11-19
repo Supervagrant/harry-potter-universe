@@ -40,7 +40,16 @@ const Characters = () => {
             console.log(character);
             return (
               <div key={index}>
+                {character.image ? (
+                  <img src={character.image} width="160px" height="auto" />
+                ) : undefined}
                 <p>{character.name}</p>
+                <p>{character.dateOfBirth}</p>
+                <p>{character.house}</p>
+                {character.patronus ? <p>{character.patronus}</p> : undefined}
+                <p>
+                  {character.wand.core} {character.wand.wood}
+                </p>
               </div>
             );
           })}
