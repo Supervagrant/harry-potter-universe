@@ -1,5 +1,5 @@
 const Staff = () => {
-    return <div>Staff Page</div>;
+  return <div>Staff Page</div>;
 };
 
 export default Staff;

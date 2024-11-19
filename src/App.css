@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
-@import url('https://necolas.github.io/normalize.css/8.0.1/normalize.css');
+@import url("https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap");
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
 
 body {
   background-color: #400275;
   color: #daedef;
-  font-family: 'SUSE', sans-serif;
+  font-family: "SUSE", sans-serif;
+  line-height: 1.5;
 }
 
 .App {
-  margin: 10px;
+  margin: 10px 20px;
 }
 
 .inner {
@@ -32,7 +33,7 @@ body {
 }
 
 .main-nav li:before {
-  content: '🎃';
+  content: "🎃";
   position: absolute;
   left: 0;
   top: 0;

@@ -1,5 +1,5 @@
 const Spells = () => {
-    return <div>Spells Page</div>;
+  return <div>Spells Page</div>;
 };
 
 export default Spells;
