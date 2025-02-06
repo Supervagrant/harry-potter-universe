@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Loading from "../loading";
 import "./style.css";
 
 const Characters = () => {
@@ -12,7 +13,12 @@ const Characters = () => {
       return;
     }
 
+    {
+      loading && <Loading />;
+    }
+
     setLoading(true);
+
     fetch(apiCharacters)
       .then((resp) => {
         if (!resp) {
