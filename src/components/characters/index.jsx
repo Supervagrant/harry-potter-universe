@@ -1,11 +1,22 @@
-import { useEffect, useState } from "react";
-import Loading from "../loading";
+import { useEffect, useState, useMemo, useCallback } from "react";
+import debounce from "lodash/debounce";
 import "./style.css";
 
 const Characters = () => {
   const apiCharacters = "https://hp-api.onrender.com/api/characters";
   const [characters, setCharacters] = useState(null);
+  const [searchField, setSearchField] = useState("");
   const [loading, setLoading] = useState(true);
+  const debouncedSetSearchField = useCallback(
+    debounce((value) => setSearchField(value), 300),
+    [],
+  );
+
+  useEffect(() => {
+    return () => {
+      debouncedSetSearchField.cancel();
+    };
+  }, [debouncedSetSearchField]);
 
   useEffect(() => {
     if (!apiCharacters) {
@@ -13,15 +24,11 @@ const Characters = () => {
       return;
     }
 
-    {
-      loading && <Loading />;
-    }
-
     setLoading(true);
 
     fetch(apiCharacters)
       .then((resp) => {
-        if (!resp) {
+        if (!resp.ok) {
           throw new Error("Network response was not ok");
         }
         return resp.json();
@@ -31,10 +38,19 @@ const Characters = () => {
         setLoading(false);
       })
       .catch((err) => {
-        console.error(err);
+        console.error("Error fetching characters:", err.message);
         setLoading(false);
       });
   }, [apiCharacters]);
+
+  const filteredCharacters = useMemo(
+    () =>
+      characters?.filter((character) => {
+        return character.name.toLowerCase().includes(searchField);
+      }) || [],
+    [characters, searchField],
+  );
+
   return (
     <div className="wrapper">
       {loading ? (
@@ -42,13 +58,28 @@ const Characters = () => {
       ) : characters ? (
         <div>
           <h1>Characters:</h1>
-          {characters.map((character, index) => {
-            console.log(character);
+          <input
+            className="search-box"
+            type="search"
+            placeholder="search caracter"
+            onChange={(e) => {
+              const searchField = e.target.value.toLowerCase();
+
+              debouncedSetSearchField(searchField);
+            }}
+          />
+          {filteredCharacters.map((character) => {
             return (
-              <div key={index}>
-                {character.image ? (
-                  <img src={character.image} width="160px" height="auto" />
-                ) : undefined}
+              <div key={character.id}>
+                {character.image && (
+                  <img
+                    src={character.image}
+                    alt={`${character.name} portrait`}
+                    width="160px"
+                    height="auto"
+                    onError={(e) => (e.target.style.display = "none")}
+                  />
+                )}
                 <p>{character.name}</p>
                 <p>{character.dateOfBirth}</p>
                 <p>{character.house}</p>
