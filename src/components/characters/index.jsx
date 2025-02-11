@@ -51,6 +51,12 @@ const Characters = () => {
     [characters, searchField],
   );
 
+  const onSearchChange = (e) => {
+    const searchField = e.target.value.toLowerCase();
+
+    debouncedSetSearchField(searchField);
+  };
+
   return (
     <div className="wrapper">
       {loading ? (
@@ -62,11 +68,7 @@ const Characters = () => {
             className="search-box"
             type="search"
             placeholder="search caracter"
-            onChange={(e) => {
-              const searchField = e.target.value.toLowerCase();
-
-              debouncedSetSearchField(searchField);
-            }}
+            onChange={onSearchChange}
           />
           {filteredCharacters.map((character) => {
             return (
