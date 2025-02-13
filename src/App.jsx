@@ -1,6 +1,6 @@
 import Navigation from "./components/nav";
 import Main from "./components/main";
-import Characters from "./components/characters";
+import CharactersComponent from "./components/characters-component";
 import Students from "./components/students";
 import Staff from "./components/staff";
 import Spells from "./components/spells";
@@ -19,7 +19,10 @@ function App() {
             </header>
             <Routes>
               <Route path="/harry-potter-universe/" element={<Main />} />
-              <Route path="/characters" element={<Characters />}></Route>
+              <Route
+                path="/characters"
+                element={<CharactersComponent />}
+              ></Route>
               <Route path="/students" element={<Students />}></Route>
               <Route path="/staff" element={<Staff />}></Route>
               <Route path="/spells" element={<Spells />}></Route>

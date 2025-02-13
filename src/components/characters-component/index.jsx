@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo, useCallback } from "react";
 import debounce from "lodash/debounce";
 import "./style.css";
 
-const Characters = () => {
+const CharactersComponent = () => {
   const apiCharacters = "https://hp-api.onrender.com/api/characters";
   const [characters, setCharacters] = useState(null);
   const [searchField, setSearchField] = useState("");
@@ -72,6 +72,7 @@ const Characters = () => {
           />
           <div className="character-list">
             {filteredCharacters.map((character) => {
+              console.log(character);
               return (
                 <div key={character.id} className="character">
                   {character.image && (
@@ -105,7 +106,7 @@ const Characters = () => {
                         <span>Patronus:</span> {character.patronus}
                       </p>
                     )}
-                    {character.wand && (
+                    {character.wand.core && (
                       <p>
                         <span>Magic wand:</span> {character.wand.core} and{" "}
                         {character.wand.wood}
@@ -124,4 +125,4 @@ const Characters = () => {
   );
 };
 
-export default Characters;
+export default CharactersComponent;
