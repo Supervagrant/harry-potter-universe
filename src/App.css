@@ -2,7 +2,7 @@
 @import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
 
 body {
-  background-color: #400275;
+  background-color: #78529c;
   color: #daedef;
   font-family: "SUSE", sans-serif;
   line-height: 1.5;
@@ -14,6 +14,10 @@ body {
 
 .inner {
   padding: 15px;
+}
+
+.App h1 {
+  margin: 0 0 20px;
 }
 
 .main-nav ul {
