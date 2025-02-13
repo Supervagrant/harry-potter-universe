@@ -67,31 +67,55 @@ const Characters = () => {
           <input
             className="search-box"
             type="search"
-            placeholder="search caracter"
+            placeholder="search caracter by name..."
             onChange={onSearchChange}
           />
-          {filteredCharacters.map((character) => {
-            return (
-              <div key={character.id}>
-                {character.image && (
-                  <img
-                    src={character.image}
-                    alt={`${character.name} portrait`}
-                    width="160px"
-                    height="auto"
-                    onError={(e) => (e.target.style.display = "none")}
-                  />
-                )}
-                <p>{character.name}</p>
-                <p>{character.dateOfBirth}</p>
-                <p>{character.house}</p>
-                {character.patronus ? <p>{character.patronus}</p> : undefined}
-                <p>
-                  {character.wand.core} {character.wand.wood}
-                </p>
-              </div>
-            );
-          })}
+          <div className="character-list">
+            {filteredCharacters.map((character) => {
+              return (
+                <div key={character.id} className="character">
+                  {character.image && (
+                    <img
+                      className="character__image"
+                      src={character.image}
+                      alt={`${character.name} portrait`}
+                      width="160px"
+                      height="auto"
+                      onError={(e) => (e.target.style.display = "none")}
+                    />
+                  )}
+                  <div className="character__data">
+                    {character.name && (
+                      <p>
+                        <span>Name:</span> {character.name}
+                      </p>
+                    )}
+                    {character.dateOfBirth && (
+                      <p>
+                        <span>Date of birth:</span> {character.dateOfBirth}
+                      </p>
+                    )}
+                    {character.house && (
+                      <p>
+                        <span>Hogwarts house:</span> {character.house}
+                      </p>
+                    )}
+                    {character.patronus && (
+                      <p>
+                        <span>Patronus:</span> {character.patronus}
+                      </p>
+                    )}
+                    {character.wand && (
+                      <p>
+                        <span>Magic wand:</span> {character.wand.core} and{" "}
+                        {character.wand.wood}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       ) : (
         <p>No characters available</p>
