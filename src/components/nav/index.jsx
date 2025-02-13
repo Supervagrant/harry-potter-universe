@@ -3,7 +3,6 @@ import "./style.css";
 const Navigation = () => {
   return (
     <nav className="main-nav">
-      <p>What do you want to see?</p>
       <ul>
         <li>
           <Link to="/characters">All characters</Link>

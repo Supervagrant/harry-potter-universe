@@ -1,4 +1,4 @@
-import Navigation from "./components/nav"
+import Navigation from "./components/nav";
 import Main from "./components/main";
 import Characters from "./components/characters";
 import Students from "./components/students";

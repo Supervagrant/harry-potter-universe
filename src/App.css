@@ -5,6 +5,7 @@ body {
   background-color: #fff;
   color: #111011;
   font-family: "Satoshi", sans-serif;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -18,34 +19,23 @@ body {
   padding: 25px;
 }
 
-.App h1 {
-  margin: 0 0 20px;
+header {
+  background-color: #e6dcd7;
+  border-radius: 10px;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
   color: #111011;
 }
 
-.main-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin-left: 15px;
-}
-
-.main-nav p {
-  margin-bottom: 15px;
-}
-
-.main-nav li {
-  position: relative;
-  padding-left: 40px;
-  padding-bottom: 10px;
-}
-
-.main-nav li:before {
-  content: "🎃";
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.main-nav a {
-  color: inherit;
+header h1::before {
+  content: "🪄";
+  display: inline-block;
+  margin-right: 5px;
 }

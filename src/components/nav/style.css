@@ -1,0 +1,40 @@
+.main-nav {
+  margin-left: 30px;
+  font-style: italic;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+.main-nav p {
+  margin-bottom: 15px;
+}
+
+.main-nav li {
+  position: relative;
+  padding-left: 40px;
+  padding-bottom: 10px;
+}
+
+.main-nav li:first-child {
+  padding-left: 15px;
+}
+
+.main-nav li:first-child::before {
+  left: -10px
+}
+
+.main-nav li:before {
+  content: "🎃";
+  position: absolute;
+  top: 0;
+  left: 15px;
+}
+
+.main-nav a {
+  color: inherit;
+}
