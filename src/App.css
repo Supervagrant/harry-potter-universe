@@ -1,23 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap");
+@import url("https://fonts.bunny.net/css?family=satoshi:400,500,700");
 @import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
 
 body {
-  background-color: #78529c;
-  color: #daedef;
-  font-family: "SUSE", sans-serif;
+  background-color: #fff;
+  color: #111011;
+  font-family: "Satoshi", sans-serif;
   line-height: 1.5;
 }
 
 .App {
+  background-color: #f9f7f6;
+  border-radius: 36px;
   margin: 10px 20px;
 }
 
 .inner {
-  padding: 15px;
+  padding: 25px;
 }
 
 .App h1 {
   margin: 0 0 20px;
+  color: #111011;
 }
 
 .main-nav ul {
