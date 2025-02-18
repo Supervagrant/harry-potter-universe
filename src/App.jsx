@@ -1,7 +1,7 @@
 import Navigation from "./components/nav";
 import Main from "./components/main";
 import CharactersComponent from "./components/characters-component";
-import Students from "./components/students";
+import StudentsComponent from "./components/students-component";
 import Staff from "./components/staff";
 import Spells from "./components/spells";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
@@ -23,7 +23,7 @@ function App() {
                 path="/characters"
                 element={<CharactersComponent />}
               ></Route>
-              <Route path="/students" element={<Students />}></Route>
+              <Route path="/students" element={<StudentsComponent />}></Route>
               <Route path="/staff" element={<Staff />}></Route>
               <Route path="/spells" element={<Spells />}></Route>
               <Route path="*" element={<div>Page not found</div>}></Route>
