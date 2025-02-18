@@ -2,6 +2,7 @@
 @import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
 
 body {
+  box-sizing: border-box;
   background-color: #400275;
   color: #111011;
   font-family: "Satoshi", sans-serif;
@@ -10,9 +11,11 @@ body {
 }
 
 .App {
+  width: calc(100% - 40px);
+  min-height: calc(100vh - 40px);
   background-color: #f9f7f6;
   border-radius: 36px;
-  margin: 10px 20px;
+  margin: 20px 20px;
 }
 
 .inner {
