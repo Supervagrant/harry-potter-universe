@@ -1,0 +1,17 @@
+.character {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.character__image {
+  margin-right: 10px;
+}
+
+.character__data {
+  padding-top: 10px;
+}
+
+.character__data span {
+  font-weight: bold;
+}
