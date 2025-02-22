@@ -1,9 +1,9 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
-import CharactersList from "../characters-list";
+import CharactersList from "../../components/characters-list";
 import debounce from "lodash/debounce";
 import "./style.css";
 
-const CharactersComponent = () => {
+const CharactersPage = () => {
   const apiCharacters = "https://hp-api.onrender.com/api/characters";
   const [characters, setCharacters] = useState(null);
   const [searchField, setSearchField] = useState("");
@@ -80,4 +80,4 @@ const CharactersComponent = () => {
   );
 };
 
-export default CharactersComponent;
+export default CharactersPage;

@@ -1,4 +1,4 @@
-const Main = () => {
+const MainPage = () => {
   return (
     <p>
       The Harry Potter universe is a magical world created by British author
@@ -14,4 +14,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default MainPage;

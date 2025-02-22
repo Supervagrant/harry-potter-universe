@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo, useCallback } from "react";
 import debounce from "lodash/debounce";
 import "./style.css";
 
-const StudentsComponent = () => {
+const StudentsPage = () => {
   const apiStudents = "https://hp-api.onrender.com/api/characters/students";
   const [students, setStudents] = useState(null);
   const [searchField, setSearchField] = useState("");
@@ -79,4 +79,4 @@ console.log('students ', students)
   );
 };
 
-export default StudentsComponent;
+export default StudentsPage;
