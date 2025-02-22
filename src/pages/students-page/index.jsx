@@ -56,7 +56,7 @@ const StudentsPage = () => {
 
     debouncedSetSearchField(searchField);
   };
-console.log('students ', students)
+  console.log("students ", students);
   return (
     <div className="wrapper">
       {loading ? (

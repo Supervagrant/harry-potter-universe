@@ -1,5 +1,6 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
 import CharactersList from "../../components/characters-list";
+import SeacrhBox from "../../components/search-box";
 import debounce from "lodash/debounce";
 import "./style.css";
 
@@ -63,13 +64,12 @@ const CharactersPage = () => {
       {loading ? (
         <p>Loading... Wait a little bit</p>
       ) : characters ? (
-        <div>
+        <div className="characters-page">
           <h1>Characters:</h1>
-          <input
-            className="search-box"
-            type="search"
-            placeholder="search caracter by name..."
-            onChange={onSearchChange}
+          <SeacrhBox
+            placeholder="Search caracter by name..."
+            onChangeHandler={onSearchChange}
+            classNameProp="characters-search-box"
           />
           <CharactersList characters={filteredCharacters} />
         </div>

@@ -2,31 +2,13 @@
   color: grey;
 }
 
-.search-box {
-  margin-bottom: 20px;
-  border-radius: 5%;
+.characters-page h1 {
+  color: black;
 }
 
-.character-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.character {
-  display: flex;
-  margin-bottom: 10px;
-  padding: 10px;
-}
-
-.character__image {
-  margin-right: 10px;
-}
-
-.character__data {
-  padding-top: 10px;
-}
-
-.character__data span {
-  font-weight: bold;
+.characters-search-box {
+  border: 1px solid #400275;
+  background-color: #feeae3;
+  width: 300px;
+  color: black;
 }

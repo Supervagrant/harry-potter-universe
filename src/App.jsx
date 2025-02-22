@@ -19,10 +19,7 @@ function App() {
             </header>
             <Routes>
               <Route path="/harry-potter-universe/" element={<MainPage />} />
-              <Route
-                path="/characters"
-                element={<CharactersPage />}
-              ></Route>
+              <Route path="/characters" element={<CharactersPage />}></Route>
               <Route path="/students" element={<StudentsPage />}></Route>
               <Route path="/staff" element={<StaffPage />}></Route>
               <Route path="/spells" element={<SpellsPage />}></Route>
