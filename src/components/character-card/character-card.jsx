@@ -1,6 +1,14 @@
 import "./style.css";
 
-const Character = ({ id, image, name, dateOfBirth, house, patronus, wand }) => {
+const CharacterCard = ({
+  id,
+  image,
+  name,
+  dateOfBirth,
+  house,
+  patronus,
+  wand,
+}) => {
   return (
     <div key={id} className="character">
       {image && (
@@ -44,4 +52,4 @@ const Character = ({ id, image, name, dateOfBirth, house, patronus, wand }) => {
   );
 };
 
-export default Character;
+export default CharacterCard;

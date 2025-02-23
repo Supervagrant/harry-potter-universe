@@ -1,4 +1,4 @@
-import Character from "../character/character";
+import CharacterCard from "../character-card/character-card";
 
 import "./style.css";
 
@@ -9,7 +9,7 @@ const CharactersList = ({ characters }) => {
         const { id, image, name, dateOfBirth, house, patronus, wand } =
           character;
         return (
-          <Character
+          <CharacterCard
             key={id}
             id={id}
             image={image}
