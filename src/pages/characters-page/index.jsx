@@ -1,14 +1,16 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
 import CharactersList from "../../components/characters-list";
 import SeacrhBox from "../../components/search-box";
+import Pagination from "../../components/pagination";
 import debounce from "lodash/debounce";
 import "./style.css";
 
-const CharactersPage = () => {
+const CharactersPage = ({ items = [], itemsPerPage = 9 }) => {
   const apiCharacters = "https://hp-api.onrender.com/api/characters";
   const [characters, setCharacters] = useState(null);
   const [searchField, setSearchField] = useState("");
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
   const debouncedSetSearchField = useCallback(
     debounce((value) => setSearchField(value), 300),
     [],
@@ -59,6 +61,24 @@ const CharactersPage = () => {
     debouncedSetSearchField(searchField);
   };
 
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    // Прокрутка в начало страницы при переключении
+    window.scrollTo(0, 0);
+  };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredCharacters.slice(
+    indexOfFirstItem,
+    indexOfLastItem,
+  );
+  const totalPages = Math.ceil(filteredCharacters.length / itemsPerPage);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [items.length]);
+
   return (
     <div className="wrapper">
       {loading ? (
@@ -71,7 +91,14 @@ const CharactersPage = () => {
             onChangeHandler={onSearchChange}
             classNameProp="characters-search-box"
           />
-          <CharactersList characters={filteredCharacters} />
+          <CharactersList characters={currentItems} />
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+            siblingCount={1}
+            showFirstLast={true}
+          />
         </div>
       ) : (
         <p>No characters available</p>
