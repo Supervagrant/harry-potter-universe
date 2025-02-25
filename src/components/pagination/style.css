@@ -14,10 +14,6 @@
   border: 1px solid #dfe3e8;
 }
 
-.pagination__item:first-of-type {
-  margin-left: 0;
-}
-
 .prev-btn--active {
   background-color: #9194ab;
 }
