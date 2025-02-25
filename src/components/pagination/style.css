@@ -1,0 +1,31 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination__item {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  margin-left: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #dfe3e8;
+}
+
+.pagination__item:first-of-type {
+  margin-left: 0;
+}
+
+.prev-btn--active {
+  background-color: #9194ab;
+}
+
+.prev-btn {
+  background-color: #fff;
+}
+
+.prev-btn--disabled {
+  cursor: default;
+}

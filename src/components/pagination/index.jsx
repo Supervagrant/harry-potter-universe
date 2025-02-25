@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 const Pagination = ({
   currentPage,
@@ -8,7 +9,6 @@ const Pagination = ({
   showFirstLast = true,
   className = "",
 }) => {
-  console.log(totalPages);
   if (totalPages <= 1) return null;
 
   const generatePages = () => {
@@ -50,31 +50,29 @@ const Pagination = ({
   const pages = generatePages();
 
   return (
-    <nav className={`flex justify-center items-center mt-8 ${className}`}>
+    <nav className={`pagination ${className}`}>
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className={`mx-1 px-3 py-2 rounded ${
-          currentPage === 1
-            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-            : "bg-gray-200 hover:bg-gray-300 text-gray-700"
+        className={`prev-btn pagination__item ${
+          currentPage === 1 ? "prev-btn--disabled" : "prev-btn--active"
         }`}
       >
-        &laquo; Prev
+        {"\u2039"}
       </button>
 
-      <div className="flex mx-2">
+      <div className="pagination__inner">
         {pages.map((page, index) => (
           <React.Fragment key={index}>
             {page === "..." ? (
-              <span className="mx-1 px-3 py-2">...</span>
+              <button className="pagination__between pagination__item">
+                ...
+              </button>
             ) : (
               <button
                 onClick={() => typeof page === "number" && onPageChange(page)}
-                className={`mx-1 px-3 py-2 rounded ${
-                  currentPage === page
-                    ? "bg-blue-500 text-white"
-                    : "bg-gray-200 hover:bg-gray-300 text-gray-700"
+                className={`pagination__item ${
+                  currentPage === page ? "pagination__item--current" : ""
                 }`}
               >
                 {page}
@@ -87,13 +85,11 @@ const Pagination = ({
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className={`mx-1 px-3 py-2 rounded ${
-          currentPage === totalPages
-            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-            : "bg-gray-200 hover:bg-gray-300 text-gray-700"
+        className={`prev-btn pagination__item ${
+          currentPage === totalPages ? "prev-btn--disabled" : "prev-btn--active"
         }`}
       >
-        Next &raquo;
+        {"\u203A"}
       </button>
     </nav>
   );

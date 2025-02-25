@@ -63,8 +63,6 @@ const CharactersPage = ({ items = [], itemsPerPage = 9 }) => {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
-    // Прокрутка в начало страницы при переключении
-    window.scrollTo(0, 0);
   };
 
   const indexOfLastItem = currentPage * itemsPerPage;
